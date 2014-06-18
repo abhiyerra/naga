@@ -64,20 +64,20 @@ func (g Gerrit) ProjectRepo(project string) string {
 func NewGerrit() Gerrit {
 	gerrit := Gerrit{}
 
-	gerrit.Host = os.Getenv("BOOTUP_GERRIT_HOST")
+	gerrit.Host = os.Getenv("NAGA_GERRIT_HOST")
 	if gerrit.Host == "" {
-		log.Println("Didn't set BOOTUP_GERRIT_HOST")
+		log.Println("Didn't set NAGA_GERRIT_HOST")
 		gerrit.Host = "https://gerrit"
 	}
 
-	gerrit.Username = os.Getenv("BOOTUP_GERRIT_USERNAME")
+	gerrit.Username = os.Getenv("NAGA_GERRIT_USERNAME")
 	if gerrit.Username == "" {
-		log.Fatal("Didn't set BOOTUP_GERRIT_USERNAME")
+		log.Fatal("Didn't set NAGA_GERRIT_USERNAME")
 	}
 
-	gerrit.Password = os.Getenv("BOOTUP_GERRIT_PASSWORD")
+	gerrit.Password = os.Getenv("NAGA_GERRIT_PASSWORD")
 	if gerrit.Password == "" {
-		log.Println("Didn't set BOOTUP_GERRIT_PASSWORD")
+		log.Println("Didn't set NAGA_GERRIT_PASSWORD")
 	}
 
 	return gerrit

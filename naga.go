@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"flag"
 	"fmt"
-	. "github.com/abhiyerra/bootup/gerrit"
+	. "github.com/abhiyerra/naga/gerrit"
 	"log"
 	"os/exec"
 	"strings"
@@ -70,7 +70,7 @@ func bootProject(repoDir string) {
 
 func setupProject(repoDir string) {
 	fmt.Println("Booting up")
-	cmd := exec.Command("vagrant", "ssh", "./bootup-setup.sh")
+	cmd := exec.Command("vagrant", "ssh", "./naga-setup.sh")
 	cmd.Dir = repoDir
 	var out bytes.Buffer
 	cmd.Stdout = &out
